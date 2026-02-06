@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class QuickSort implements SortingAlgorithm{
 
-public class QuickSort {
+    public int[] sorty(int[] input) {
+        return input;
+    }
 }

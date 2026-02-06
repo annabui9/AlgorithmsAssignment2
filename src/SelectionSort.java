@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class SelectionSort implements SortingAlgorithm{
 
-public class SelectionSort {
+    public int[] sorty(int[] input) {
+        return input;
+    }
 }

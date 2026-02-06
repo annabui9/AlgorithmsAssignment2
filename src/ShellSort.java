@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class ShellSort implements SortingAlgorithm{
 
-public class ShellSort {
+    public int[] sorty(int[] input) {
+        return input;
+    }
 }

@@ -1,4 +1,7 @@
-package PACKAGE_NAME;
+public class InsertionSort implements SortingAlgorithm{
 
-public class InsertionSort {
+
+    public int[] sorty(int[] input) {
+        return input;
+    }
 }

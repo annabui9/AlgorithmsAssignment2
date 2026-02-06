@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class MergeSort implements SortingAlgorithm{
 
-public class MergeSort {
+    public int[] sorty(int[] input) {
+        return input;
+    }
 }
