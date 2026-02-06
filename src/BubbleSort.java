@@ -1,7 +1,7 @@
 public class BubbleSort implements SortingAlgorithm {
 
     public int[] sorty(int[] input) {
-        int n = input.length - 1;
+        int n = input.length - 1; // don't need to check last element (should already be sorted)
         int temp = 0;
 
         for(int i = 0; i < n ; i ++){ // loop to repeat comparison of values
