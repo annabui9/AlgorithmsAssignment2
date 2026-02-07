@@ -15,13 +15,17 @@ public class MergeSort implements SortingAlgorithm{
         for(int i = 0; i < newSize; i++){ //iterating to create values in merged
 
             if(indexA == A.length){ // use B if all elements in A have been used
-                merged[i] = B[indexB++];
+                merged[i] = B[indexB];
+                indexB++; //increment
             }else if(indexB == B.length){
-                merged[i] = A[indexA++]; //use A if all elements in B have been ued
-            }else if(A[indexA] < B[indexB]){ // use lesser value
-                merged[i] = A[indexA++];
-            }else{
-                merged[i] = B[indexB++];
+                merged[i] = A[indexA]; //use A if all elements in B have been ued
+                indexA++; //increment
+            }else if(A[indexA] < B[indexB]){ // use lesser value (A)
+                merged[i] = A[indexA];
+                indexA++; //increment
+            }else{ // if B is lesser value
+                merged[i] = B[indexB];
+                indexB++; //increment
             }
 
         }
@@ -30,12 +34,14 @@ public class MergeSort implements SortingAlgorithm{
 
     public int[] mergeSort(int[] input){
         int n = input.length;
-        int[] A = new int[n/2]; // size is first half of array
-        int[] B = new int[n - (n /2)]; // size is second half of array
 
         if(n == 1){ // list of 1 element is already sorted
             return input;
         }
+
+        int[] A = new int[n/2]; // size is first half of array
+        int[] B = new int[n - (n /2)]; // size is second half of array
+
 
         for(int i = 0; i < n/2; i++){  // copy first half of input into A
             A[i] = input[i];
@@ -51,30 +57,30 @@ public class MergeSort implements SortingAlgorithm{
         return merge(A, B); //merge sorted halves
     }
 
-//    //PRINTING ARRAY (to test)
-//    public static String printArray(int[] input){
-//        String array = "[";
-//
-//        for (int i = 0; i < input.length; i++) {
-//
-//            array = array + input[i];
-//            if (i < input.length - 1) {
-//                array = array +  " , ";
-//            }
-//
-//        }
-//        array = array + "]";
-//        return array;
-//    }
-//
-//    //TESTING ALGORITHM
-//    public static void main(String args[]){
-//        MergeSort ms = new MergeSort();
-//        int[] input = {5, 10, 60, 0, -1, 34, 6, 10};
-//        // Output should be: [-1, 0, 5, 6, 10, 10, 34, 60]
-//
-//        System.out.println(printArray(ms.sorty(input)));
-//
-//    }
+    //PRINTING ARRAY (to test)
+    public static String printArray(int[] input){
+        String array = "[";
+
+        for (int i = 0; i < input.length; i++) {
+
+            array = array + input[i];
+            if (i < input.length - 1) {
+                array = array +  " , ";
+            }
+
+        }
+        array = array + "]";
+        return array;
+    }
+
+    //TESTING ALGORITHM
+    public static void main(String args[]){
+        MergeSort ms = new MergeSort();
+        int[] input = {5, 10, 60, 0, -1, 34, 6, 10};
+        // Output should be: [-1, 0, 5, 6, 10, 10, 34, 60]
+
+        System.out.println(printArray(ms.sorty(input)));
+
+    }
 
 }
